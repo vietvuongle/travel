@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 
 import { IoMdCloseCircle } from 'react-icons/io';
+import { FaUserCircle } from 'react-icons/fa';
 import { TbGridDots } from 'react-icons/tb';
 import Img from '../../../Assets/Logo.png';
-import './navbar.css';
+import './navbar.scss';
+import { UserContext } from '../../../Context/UserContext';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const NavbarLogin = () => {
     const [active, setActive] = useState('navBar');
     //function to toggle navBar
     const showNav = () => {
@@ -18,14 +20,16 @@ const Navbar = () => {
         setActive('navBar');
     };
 
+    const { user } = useContext(UserContext);
+
     return (
         <section className="navBarSection">
             <header className="header flex">
                 <div className="logoDiv">
-                    <a href="/#" className="logo flex">
+                    <Link to="/home" className="logo flex">
                         <img src={Img} alt="" className="icon" />
                         <h2>HueTour.</h2>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className={active}>
@@ -72,9 +76,10 @@ const Navbar = () => {
                             </a>
                         </li>
 
-                        <button className="btn">
-                            <Link to="./login">Login</Link>
-                        </button>
+                        <Link to="/account" className="user-btn">
+                            <FaUserCircle className="user" />
+                            {!!user && <span className="user-name">{user.email.slice(0, -10)}</span>}
+                        </Link>
                     </ul>
 
                     <div onClick={removeNavbar} className="closeNavbar">
@@ -90,4 +95,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavbarLogin;

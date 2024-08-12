@@ -1,34 +1,34 @@
-import styles from './Place.module.scss'
-import classNames from "classnames/bind"
-import Sidebar from "../Sidebar";
+import styles from './Place.module.scss';
+import classNames from 'classnames/bind';
+import Sidebar from '../Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
-import { faComment } from "@fortawesome/free-regular-svg-icons";
-import { useState } from "react";
+import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faComment } from '@fortawesome/free-regular-svg-icons';
+import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const cx = classNames.bind(styles)
-
+const cx = classNames.bind(styles);
 
 function Place() {
+    const [isOpen, setIsOpen] = useState(true);
 
-       const [isOpen, setIsOpen] = useState(true);
-    
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
-    return ( 
+    return (
         <div className={cx('wrapper')}>
-            { isOpen && (<div className={cx('menu')}>
-                <Sidebar/>
-            </div>)}
+            {isOpen && (
+                <div className={cx('menu')}>
+                    <Sidebar />
+                </div>
+            )}
             <div className={cx('content')}>
                 <div className={cx('nav')}>
                     <div className={cx('nav-home')}>
                         <button onClick={toggleMenu} className={cx('header')}>
-                            <FontAwesomeIcon icon={faBars}/>
+                            <FontAwesomeIcon icon={faBars} />
                         </button>
                         <p className={cx('pading10px')}>Home</p>
                         <p className={cx('pading10px')}>Contact</p>
@@ -40,7 +40,6 @@ function Place() {
                         <button className={cx('search-btn')}>
                             <FontAwesomeIcon icon={faComment} />
                         </button>
-                        
                     </div>
                 </div>
 
@@ -53,13 +52,13 @@ function Place() {
                                 <input type="text" className={cx('input-border')} />
                             </div>
                             <div className={cx('mb-4')}>
-                                <label className={cx('block')} >ID Tỉnh Thành</label>
+                                <label className={cx('block')}>ID Tỉnh Thành</label>
                                 <select className={cx('input-border')}>
                                     <option></option>
                                 </select>
                             </div>
                             <div className={cx('mb-4')}>
-                                <label className={cx('block')} >Thông Tin</label>
+                                <label className={cx('block')}>Thông Tin</label>
                                 <input type="text" className={cx('input-border')} />
                             </div>
                             <div className={cx('mb-4')}>
@@ -67,7 +66,7 @@ function Place() {
                                 <input type="file" />
                             </div>
                         </div>
-                        
+
                         <div className={cx('content-header')}>
                             <h2>Danh Sách Tour</h2>
                             <Table striped bordered hover>
@@ -89,25 +88,20 @@ function Place() {
                                         <th>more</th>
                                     </tr>
                                     <tr>
-                                    <th>Nha Trang</th>
+                                        <th>Nha Trang</th>
                                         <th>Nha Trang</th>
                                         <th>more</th>
                                         <th>Mường Thanh</th>
                                         <th>more</th>
                                     </tr>
                                 </tbody>
-                
                             </Table>
                         </div>
-
                     </div>
                 </div>
-
-                
-                
             </div>
         </div>
-     );
+    );
 }
 
 export default Place;

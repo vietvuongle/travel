@@ -5,8 +5,9 @@
 }
 .content {
     flex: 1;
+    font-size: 16px;
 }
-.navs {
+.nav {
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -14,20 +15,17 @@
     border: 0.1px solid rgba(22, 24, 35, 0.2);
 }
 .nav-home {
-    align-items: center;
+    display: flex;
     cursor: pointer;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 hàng đều nhau */
-    gap: 5px; /* Khoảng cách giữa các phần tử */
+    align-items: center;
 }
 .pading10px {
     margin-left: 10px;
 }
 .header {
-    margin-left: 10px;
-    background-color: white;
+    margin: 0 10px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 20px;
     padding: 5px 5px;
 
     &:hover {
@@ -40,7 +38,6 @@
 }
 .search-btn {
     font-size: 20px;
-    background-color: white;
     margin-right: 20px;
     cursor: pointer;
 

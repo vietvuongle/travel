@@ -1,5 +1,5 @@
-@import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
     --PrimaryColor: hsl(199, 100%, 33%);
@@ -34,7 +34,7 @@ body {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;

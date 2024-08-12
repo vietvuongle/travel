@@ -1,53 +1,42 @@
-import { Link, Navigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
-import React from 'react';
 import axios from 'axios';
-import './login.scss';
-import { UserContext } from '../../../Context/UserContext';
+import './Register.module.scss';
+import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Login = () => {
+function Register() {
+    const [reEnterPassword, setReEnterPassword] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [redirect, setRedirect] = useState(false);
 
-    const { setUser } = useContext(UserContext);
-
-    async function handleLoginSubmit(e) {
+    async function registerUser(e) {
         e.preventDefault();
         try {
-            const { data } = await axios.post(
-                '/login',
-                { email, password },
-                {
-                    withCredentials: true, // Thiết lập để gửi cookie cùng với yêu cầu
-                },
-            );
-            setUser(data);
-            alert('login successfull');
-            setRedirect(true);
+            await axios.post('/register', {
+                email,
+                password,
+                reEnterPassword,
+            });
+            alert('Register successfull');
         } catch (error) {
-            alert('login fail! Try again');
+            alert('Register failed! Try again');
         }
-    }
-
-    if (redirect) {
-        return <Navigate to={'/home'} />;
     }
 
     return (
         <div className="Auth-form-container">
-            <form className="Auth-form" onSubmit={handleLoginSubmit}>
+            <form className="Auth-form" onSubmit={registerUser}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign In</h3>
                     <div className="text-center">
-                        Not registered yet?{' '}
+                        Already registered?{' '}
                         <span>
-                            <Link to="/register" className="link-primary">
-                                Sign Up
-                            </Link>{' '}
+                            <Link to="/login" className="link-primary">
+                                Sign In
+                            </Link>
                         </span>
                     </div>
-                    <div className="form-group mt-3">
+                    <div className="form-group mt-2">
                         <label htmlFor="email">Email address</label>
                         <input
                             type="email"
@@ -58,7 +47,7 @@ const Login = () => {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
-                    <div className="form-group mt-3">
+                    <div className="form-group mt-2">
                         <label htmlFor="password">Password</label>
                         <input
                             type="password"
@@ -67,6 +56,17 @@ const Login = () => {
                             id="password"
                             name={password}
                             onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group mt-2">
+                        <label htmlFor="re-password">Re-enter Password</label>
+                        <input
+                            type="password"
+                            className="form-control mt-1"
+                            placeholder="Re-enter Password"
+                            id="reEnterPassword"
+                            name={reEnterPassword}
+                            onChange={(e) => setReEnterPassword(e.target.value)}
                         />
                     </div>
                     <div className="d-grid gap-2 mt-3">
@@ -84,6 +84,6 @@ const Login = () => {
             </form>
         </div>
     );
-};
+}
 
-export default Login;
+export default Register;

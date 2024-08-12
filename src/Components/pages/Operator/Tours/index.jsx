@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './Tours.module.css';
+import styles from './Tours.module.scss';
 import Sidebar from '../Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +25,7 @@ function Tours() {
                 </div>
             )}
             <div className={cx('content')}>
-                <div className={cx('navs')}>
+                <div className={cx('nav')}>
                     <div className={cx('nav-home')}>
                         <button onClick={toggleMenu} className={cx('header')}>
                             <FontAwesomeIcon icon={faBars} />

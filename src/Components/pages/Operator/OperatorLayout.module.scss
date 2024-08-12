@@ -2,10 +2,10 @@
     height: 100%;
     display: flex;
     margin: 0;
-
 }
 .content {
     flex: 1;
+    font-size: 16px;
 }
 .nav {
     height: 50px;
@@ -23,29 +23,25 @@
     margin-left: 10px;
 }
 .header {
-    margin-left: 10px;
-    background-color: white;
+    margin: 0 10px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     padding: 5px 5px;
 
     &:hover {
         opacity: 0.5;
     }
 }
-.header-icon{
+.header-icon {
     margin-right: 20px;
     align-items: center;
-    
-    
 }
 .search-btn {
     font-size: 20px;
-    background-color: white;
     margin-right: 20px;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
         opacity: 0.5;
     }
 }
@@ -66,8 +62,8 @@
     height: 25px;
     margin-top: 5px;
     border-radius: 2px;
-    padding: 5px 5px;
-    height: 3.4rem;
+    padding: 7px 5px;
+    height: 3.2rem;
     &:focus {
         border: 1px solid rgb(123, 213, 189);
     }
@@ -89,7 +85,7 @@
 table {
     border-collapse: collapse;
     margin-top: 10px;
-    
+
     width: 100%;
 }
 tr,
@@ -97,7 +93,7 @@ th {
     padding: 0 10px;
     border: 0.5px solid gray;
     text-align: center;
-    word-wrap: break-word;  
+    word-wrap: break-word;
     word-break: break-all;
     white-space: normal;
 }
