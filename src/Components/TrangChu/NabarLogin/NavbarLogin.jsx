@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 
 const NavbarLogin = () => {
     const [active, setActive] = useState('navBar');
+    const { user } = useContext(UserContext);
+
     //function to toggle navBar
     const showNav = () => {
         setActive('navBar activeNavbar');
@@ -20,15 +22,13 @@ const NavbarLogin = () => {
         setActive('navBar');
     };
 
-    const { user } = useContext(UserContext);
-
     return (
         <section className="navBarSection">
             <header className="header flex">
                 <div className="logoDiv">
                     <Link to="/home" className="logo flex">
                         <img src={Img} alt="" className="icon" />
-                        <h2>HueTour.</h2>
+                        <h2> </h2>
                     </Link>
                 </div>
 

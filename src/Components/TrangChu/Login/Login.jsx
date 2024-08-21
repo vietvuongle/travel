@@ -43,7 +43,7 @@ const Login = () => {
                         Not registered yet?{' '}
                         <span>
                             <Link to="/register" className="link-primary">
-                                Sign Up
+                                Register
                             </Link>{' '}
                         </span>
                     </div>

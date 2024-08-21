@@ -7,6 +7,9 @@ function TrangChuLogin() {
     return (
         <div>
             <Navbar />
+            <br />
+            <br />
+            <br />
             <Home />
             <Main />
             <Footer />

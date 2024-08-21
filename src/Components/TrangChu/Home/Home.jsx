@@ -66,7 +66,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div data-aos="fade-up" className="homeFooterIcons flex">
+                <div data-aos="fade-up" className="homeFooterIcons">
                     <div className="rightIcons">
                         <a href="https://www.facebook.com/">
                             <FiFacebook className="icon" />

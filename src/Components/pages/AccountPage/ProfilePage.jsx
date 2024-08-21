@@ -1,10 +1,12 @@
 import { useContext, useState } from 'react';
 import { UserContext } from '../../../Context/UserContext';
 import NavbarLogin from '../../TrangChu/NabarLogin/NavbarLogin';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import PlacesPage from './PlacesPage';
+import AccountNav from './AccountNav';
 
-function AccountPage() {
+function ProfilePage() {
     const [redirect, setRedirect] = useState(null);
     const { ready, user, setUser } = useContext(UserContext);
     let { subpage } = useParams();
@@ -27,14 +29,6 @@ function AccountPage() {
         return <Navigate to={'/login'} />;
     }
 
-    function linkClasses(type = null) {
-        let classes = 'py-2 px-6';
-        if (type === subpage) {
-            classes += ' bg-main text-white rounded-full';
-        }
-        return classes;
-    }
-
     if (redirect) {
         return <Navigate to={redirect} />;
     }
@@ -48,19 +42,9 @@ function AccountPage() {
             <br />
             <br />
             <br />
-            <br />
+
             <div>
-                <nav className="w-full justify-center flex gap-2 mb-8">
-                    <Link className={linkClasses('profile')} to={'/account'}>
-                        My profile
-                    </Link>
-                    <Link className={linkClasses('bookings')} to={'/account/bookings'}>
-                        My bookings
-                    </Link>
-                    <Link className={linkClasses('places')} to={'/account/places'}>
-                        My accommodations
-                    </Link>
-                </nav>
+                <AccountNav />
                 {subpage === 'profile' && (
                     <div className="text-center max-w-lg mx-auto">
                         Logged in as {user.email.slice(0, -10)} ({user.email})<br />
@@ -69,9 +53,10 @@ function AccountPage() {
                         </button>
                     </div>
                 )}
+                {subpage === 'places' && <PlacesPage />}
             </div>
         </div>
     );
 }
 
-export default AccountPage;
+export default ProfilePage;

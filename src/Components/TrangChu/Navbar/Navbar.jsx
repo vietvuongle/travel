@@ -24,7 +24,6 @@ const Navbar = () => {
                 <div className="logoDiv">
                     <a href="/#" className="logo flex">
                         <img src={Img} alt="" className="icon" />
-                        <h2>HueTour.</h2>
                     </a>
                 </div>
 
