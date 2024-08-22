@@ -1,0 +1,9 @@
+.bill {
+    display: flex;
+    justify-content: space-between;
+}
+.bill_left,
+.bill_right {
+    flex: 1;
+    padding: 0 10px;
+}

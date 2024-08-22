@@ -66,9 +66,9 @@ const Navbar = () => {
                         </li>
 
                         <li className="navItem">
-                            <a href="/#" className="navLink">
+                            <Link to="/contact" className="navLink">
                                 Contact
-                            </a>
+                            </Link>
                         </li>
 
                         <button className="btn">

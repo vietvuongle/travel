@@ -7,7 +7,8 @@ import PlacesPage from '../Components/pages/AccountPage/PlacesPage';
 import PlacesFormPage from '../Components/pages/AccountPage/PlacesFormPage';
 import DetailPage from '../Components/pages/AccountPage/DetailPage';
 import BookingsPage from '../Components/pages/AccountPage/BookingsPage';
-
+import Bill from '../Components/pages/Operator/Bill';
+import Contact from '../Components/TrangChu/Navbar/Contact/contact';
 const publicRoutes = [
     { path: '/', component: TrangChu },
     { path: '/home', component: TrangChuLogin },
@@ -19,6 +20,8 @@ const publicRoutes = [
     { path: '/account/places/:id', component: PlacesFormPage },
     { path: '/place/:id', component: DetailPage },
     { path: '/account/bookings', component: BookingsPage },
+    { path: '/bill', component: Bill },
+    { path: '/contact', component: Contact },
 ];
 
 export { publicRoutes };
