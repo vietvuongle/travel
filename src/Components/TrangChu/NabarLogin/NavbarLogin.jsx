@@ -71,7 +71,7 @@ const NavbarLogin = () => {
                         </li>
 
                         <li className="navItem">
-                            <Link to="./contact" className="navLink">
+                            <Link to="/contact" className="navLink">
                                 Contact
                             </Link>
                         </li>

@@ -66,13 +66,13 @@ const Navbar = () => {
                         </li>
 
                         <li className="navItem">
-                            <Link to="./contact" className="navLink">
+                            <Link to="/contact" className="navLink">
                                 Contact
                             </Link>
                         </li>
 
                         <button className="btn">
-                            <Link to="./login">Login</Link>
+                            <Link to="/login">Login</Link>
                         </button>
                     </ul>
 
