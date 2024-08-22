@@ -5,10 +5,11 @@ import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from '../../TrangChu/Navbar/Navbar';
 import { UserContext } from '../../../Context/UserContext';
+import PlaceImg from './PlaceImg';
 
 function PlacesPage() {
-    const [places, setPlaces] = useState([]);
     const { user } = useContext(UserContext);
+    const [places, setPlaces] = useState([]);
 
     useEffect(() => {
         axios.get('/user-places').then(({ data }) => {
@@ -46,25 +47,21 @@ function PlacesPage() {
             <div className="mt-4">
                 {places.length > 0 &&
                     places.map((place, index) => (
-                        <Link
-                            key={index}
-                            to={'/account/places/' + place._id}
-                            className="bg-gray-200 gap-4 p-4 rounded-2xl flex"
-                        >
-                            <div className="flex w-32 h-32 bg-gray-400">
-                                {place.photos.length > 0 && (
-                                    <img
-                                        className="object-cover w-full h-full"
-                                        src={'http://localhost:4000/uploads/' + place.photos[0]}
-                                        alt=""
-                                    />
-                                )}
-                            </div>
-                            <div className="flex-1">
-                                <h2 className="text-xl">{place.title}</h2>
-                                <p className="text-sm mt-2">{place.description}</p>
-                            </div>
-                        </Link>
+                        <div className="flex bg-gray-200 gap-4 p-4 rounded-2xl">
+                            <Link
+                                key={index}
+                                to={'/account/places/' + place._id}
+                                className="bg-gray-200 gap-4 p-4 rounded-2xl flex"
+                            >
+                                <div className="flex w-32 h-32 bg-gray-400">
+                                    <PlaceImg place={place} />
+                                </div>
+                                <div className="flex-1">
+                                    <h2 className="text-xl">{place.title}</h2>
+                                    <p className="text-sm mt-2">{place.description}</p>
+                                </div>
+                            </Link>
+                        </div>
                     ))}
             </div>
         </div>

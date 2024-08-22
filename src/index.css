@@ -18,5 +18,9 @@ button {
 }
 button.main {
     background-color: #f5385d;
-    @apply bg-main p-2 w-full text-white rounded-2xl;
+    @apply bg-main p-2 text-white rounded-2xl;
+}
+button.green {
+    background-color: green;
+    @apply p-2 w-full text-white rounded-2xl;
 }
