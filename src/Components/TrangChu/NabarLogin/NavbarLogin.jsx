@@ -71,9 +71,9 @@ const NavbarLogin = () => {
                         </li>
 
                         <li className="navItem">
-                            <a href="/#" className="navLink">
+                            <Link to="./contact" className="navLink">
                                 Contact
-                            </a>
+                            </Link>
                         </li>
 
                         <Link to="/account" className="user-btn">

@@ -22,6 +22,8 @@ const publicRoutes = [
     { path: '/account/bookings', component: BookingsPage },
     { path: '/bill', component: Bill },
     { path: '/contact', component: Contact },
+    { path: '/contact/login', component: Login },
+    { path: '/home/contact', component: Contact },
 ];
 
 export { publicRoutes };
