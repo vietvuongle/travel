@@ -1,0 +1,154 @@
+.Container {
+    margin-left: 190px;
+    margin-right: 226px;
+    margin-bottom: 30px;
+    padding-top: 135px;
+}
+
+.Container img {
+    width: 350px;
+    height: auto;
+}
+
+.Container .content {
+    display: flex;
+}
+
+.Container .content .content-right {
+    margin-left: 17px;
+}
+
+.Container .content h4 {
+    opacity: 0.5;
+}
+
+.Container .content .title {
+    margin-top: 5px;
+}
+
+.Container .content .title p {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.Container .content .social-icons {
+    margin: 23px 0;
+    display: flex;
+    align-items: center;
+}
+
+.Facebook {
+    color: #4e3fc2;
+}
+
+.Twitter {
+    color: #619afc;
+}
+
+.Google {
+    color: #9b524f;
+}
+
+.Pinterest {
+    color: #845e64;
+}
+
+.Container .content .social-icons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 14px; 
+    border-radius: 8px;
+    border: 1px solid #ccccccab;
+}
+
+.Container .content .social-icons a:hover {
+    opacity: 0.8;
+}
+
+.Container .content .ticket-quantity label {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 37px;
+    opacity: 0.5;
+}
+
+.Container .content .ticket-quantity input {
+    width: 48px;
+    padding: 5px;
+    font-size: 16px;
+    height: 33px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    opacity: 0.5;    
+}
+
+.add-to-cart {
+    width: 480px;
+    height: 35px;
+    background:linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    opacity: 0.9;
+}
+
+.tabs {
+    width: 100%;
+    margin-top: 60px;
+}
+  
+.tab-buttons {
+    display: flex;
+}
+  
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #dad7d7;
+    font-size: 16px;
+    outline: none;
+    opacity: 0.5;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 6px;
+}
+
+.tab-button:hover {
+    opacity: 0.8;
+}
+  
+.tab-button.active {
+    background: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));;
+    color: #fff;
+    opacity: inherit;
+}
+  
+.tab-content {
+    padding: 20px;
+    border: 2px solid #eae7e7;
+}
+  
+.tabs .description {
+    opacity: 0.6;
+    font-size: 15px;
+}
+  
+.description.active {
+    display: block;
+}
+
