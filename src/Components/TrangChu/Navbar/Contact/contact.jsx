@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../Navbar';
 import img from '../../../../Assets/img(4).webp';
 import banner_left from '../../../../Assets/banner-left.png';
@@ -10,10 +10,14 @@ import logo from '../../../../Assets/Logo.png';
 import mastercard from '../../../../Assets/Mastercard.png';
 import './contact.scss';
 import { Link } from 'react-router-dom';
-const contact = () => {
+import { UserContext } from '../../../../Context/UserContext';
+import NavbarLogin from '../../NabarLogin/NavbarLogin';
+const Contact = () => {
+    const { user } = useContext(UserContext);
     return (
         <div className="contact-page">
-            <Navbar />
+            {!user && <Navbar />}
+            {!!user && <NavbarLogin />}
             <div>
                 <div className="contact-content">
                     <div className="contact-top">
@@ -361,4 +365,4 @@ const contact = () => {
     );
 };
 
-export default contact;
+export default Contact;
