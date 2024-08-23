@@ -74,10 +74,7 @@ function DetailPage() {
             <br />
             <div className="px-3 bg-gray-200 py-3">
                 <h1 className="text-2xl">{place.title}</h1>
-                <a
-                    className="flex mt-1 underline gap-1"
-                    href={'https://maps.google.com?' + place.title + place.address}
-                >
+                <a className="flex mt-1 underline gap-1" href={'https://maps.google.com?' + place.address}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -124,27 +121,27 @@ function DetailPage() {
                             </div>
                         </div>
                     </div>
-                </div>
-                <button
-                    onClick={() => setShowAllPhotos(true)}
-                    className="flex gap-1 absolute bottom-3 right-5 py-2 px-2 rounded-2xl bg-white"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="size-6"
+                    <button
+                        onClick={() => setShowAllPhotos(true)}
+                        className="flex gap-1 absolute bottom-3 right-5 py-2 px-2 rounded-2xl bg-white"
                     >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                        />
-                    </svg>
-                    Xem thêm
-                </button>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-6"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                            />
+                        </svg>
+                        Xem thêm
+                    </button>
+                </div>
 
                 <div className="grid gap-5 grid-cols-[2fr_1fr] my-3">
                     <div>

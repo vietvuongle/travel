@@ -24,8 +24,6 @@ function PlacesFormPage() {
         }
         axios.get('/places/' + id).then((response) => {
             const { data } = response;
-            console.log(data);
-
             setTitle(data.title);
             setAddress(data.address);
             setAddedPhotos(data.photos);
@@ -82,6 +80,11 @@ function PlacesFormPage() {
             await axios.post('/places', placeData);
             setRedirect(true);
         }
+    }
+
+    async function handleDelete() {
+        await axios.delete('/places/' + id);
+        setRedirect(true);
     }
 
     if (redirect) {
@@ -149,8 +152,11 @@ function PlacesFormPage() {
                         <input type="number" value={price} onChange={(ev) => setPrice(ev.target.value)} />
                     </div>
                 </div>
-                <button className="main my-4">Save</button>
+                <button className="green my-4">Save or update</button>
             </form>
+            <button onClick={handleDelete} className="main my-2 w-48">
+                Delete
+            </button>
         </div>
     );
 }

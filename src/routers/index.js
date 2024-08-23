@@ -8,6 +8,9 @@ import PlacesFormPage from '../Components/pages/AccountPage/PlacesFormPage';
 import DetailPage from '../Components/pages/AccountPage/DetailPage';
 import BookingsPage from '../Components/pages/AccountPage/BookingsPage';
 import Bill from '../Components/pages/Operator/Bill';
+import BookingPlace from '../Components/pages/AccountPage/BookingPlace';
+import Destinate from '../Components/pages/Operator/Destinate/Destinate';
+import TourDetailUser from '../Components/pages/Operator/TourDetailUser/TourDetailUser';
 import Contact from '../Components/TrangChu/Navbar/Contact/Contact';
 const publicRoutes = [
     { path: '/', component: TrangChu },
@@ -22,6 +25,9 @@ const publicRoutes = [
     { path: '/account/bookings', component: BookingsPage },
     { path: '/bill', component: Bill },
     { path: '/contact', component: Contact },
+    { path: '/account/bookings/:id', component: BookingPlace },
+    { path: '/destinate', component: Destinate },
+    { path: '/tour-detail', component: TourDetailUser },
 ];
 
 export { publicRoutes };
