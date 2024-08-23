@@ -1,7 +1,14 @@
+<<<<<<< HEAD:src/Components/pages/AccountPage/BookingsPage.jsx
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../Context/UserContext';
 import Navbar from '../../TrangChu/Navbar/Navbar';
 import NavbarLogin from '../../TrangChu/NabarLogin/NavbarLogin';
+=======
+import { useContext } from 'react';
+import { UserContext } from '../../../../Context/UserContext';
+import Navbar from '../../../TrangChu/Navbar/Navbar';
+import NavbarLogin from '../../../TrangChu/NabarLogin/NavbarLogin';
+>>>>>>> 1f78cd1 (code da sua css detail vs operator):src/Components/pages/AccountPage/AddPlace/BookingsPage.jsx
 import AccountNav from './AccountNav';
 import PlaceImg from './PlaceImg';
 import { format } from 'date-fns';

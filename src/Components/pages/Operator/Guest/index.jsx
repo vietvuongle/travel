@@ -1,8 +1,8 @@
 import classNames from "classnames/bind"
-import styles from "./Vehicle.module.scss"
-import Sidebar from "../Sidebar";
+import styles from './OperatorLayout.module.scss'
+import Sidebar from "../Sidebar"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
 import Table from 'react-bootstrap/Table';
@@ -10,24 +10,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const cx = classNames.bind(styles)
 
-function Vehicle() {
+function Operator() {
 
     const [isOpen, setIsOpen] = useState(true);
-    
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
-    return ( 
+
+    return (
         <div className={cx('wrapper')}>
-            { isOpen && (<div className={cx('menu')}>
-                <Sidebar/>
+            {isOpen && (<div id="menu" className="show">
+                <Sidebar />
             </div>)}
             <div className={cx('content')}>
                 <div className={cx('nav')}>
                     <div className={cx('nav-home')}>
                         <button onClick={toggleMenu} className={cx('header')}>
-                            <FontAwesomeIcon icon={faBars}/>
+                            <FontAwesomeIcon icon={faBars} />
                         </button>
                         <p className={cx('pading10px')}>Home</p>
                         <p className={cx('pading10px')}>Contact</p>
@@ -39,28 +40,19 @@ function Vehicle() {
                         <button className={cx('search-btn')}>
                             <FontAwesomeIcon icon={faComment} />
                         </button>
-                        
+
                     </div>
                 </div>
 
                 <div>
                     <div className={cx('form-create')}>
                         <div className={cx('form-content')}>
-                            <h2>Quản lý dịch vụ</h2>
+                            <h3>Quản lý khách hàng</h3>
                             <div className={cx('mb-4')}>
-                                <label className={cx('block')}>Tên Dịch vụ</label>
+                                <label className={cx('block')}>Tên Khách Sạn</label>
                                 <input type="text" className={cx('input-border')} />
                             </div>
 
-                            <div className={cx('mb-4')}>
-                                <label className={cx('block')} >Loại Dịch Vụ</label>
-                                <input type="text" className={cx('input-border')} />
-                            </div>
-                            <div className={cx('mb-4')}>
-                                <label className={cx('block')} >Chỗ ngồi</label>
-                                <input type="text" className={cx('input-border')} />
-                            </div>
-                            
                             <div className={cx('mb-4')}>
                                 <label className={cx('block')} >Khu Vực</label>
                                 <select className={cx('input-border')}>
@@ -68,57 +60,59 @@ function Vehicle() {
                                 </select>
                             </div>
                             <div className={cx('mb-4')}>
+                                <label className={cx('block')} >Thông Tin</label>
+                                <input type="text" className={cx('input-border')} />
+
+                            </div>
+                            <div className={cx('mb-4')}>
+                                <label className={cx('block')}>Hình Ảnh</label>
+                                <input type="file" />
+                            </div>
+                            <div className={cx('mb-4')}>
                                 <label className={cx('block')}>Trạng Thái</label>
                                 <select className={cx('input-border')}>
-                                    <option value="1">Còn Xe</option>
-                                    <option value="2">Hết Xe</option>
+                                    <option value="1">Còn phòng</option>
+                                    <option value="2">Hết phòng</option>
                                 </select>
                             </div>
                             <div className='btn-submit'>
                                 <button type='submit'>Thêm Mới</button>
                             </div>
                         </div>
-                        
+
                         <div className={cx('content-header')}>
-                            <h2>Danh Sách Dịch Vụ</h2>
+                            <h2>Danh Sách Khách Sạn</h2>
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                        <th>Tên Dịch vụ</th>
-                                        <th>Loại Dịch Vụ</th>
-                                        <th>Chỗ ngồi</th>
+                                        <th>Tên Khách Sạn</th>
                                         <th>Khu Vực</th>
+                                        <th>Thông Tin</th>
+                                        <th>Hình Ảnh</th>
                                         <th>Trạng Thái</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>Xe khách Huế-Đà Nẵng</th>
-                                        <th>Ô tô 40 chỗ</th>
-                                        <th>40</th>
-                                        <th>75</th>
-                                        <th>Còn xe</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Xe khách Huế-Đà Nẵng</th>
-                                        <th>Ô tô 40 chỗ</th>
-                                        <th>40</th>
-                                        <th>75</th>
-                                        <th>Còn xe</th>
+                                        <th>Century</th>
+                                        <th>Thành Phố Huế</th>
+                                        <th>Đẹp lắm luôn á</th>
+                                        <th>Ảnh nè</th>
+                                        <th>Còn Phòng</th>
                                     </tr>
                                 </tbody>
-                
+
                             </Table>
                         </div>
 
                     </div>
                 </div>
 
-                
-                
+
+
             </div>
         </div>
-     );
+    )
 }
 
-export default Vehicle;
+export default Operator

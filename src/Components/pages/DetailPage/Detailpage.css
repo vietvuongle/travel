@@ -1,0 +1,149 @@
+/* Container cho toàn bộ trang chi tiết */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white;
+    border-bottom: 1px solid #ddd; /* Làm cho đường viền dưới header nhẹ hơn */
+    padding: 0.5rem 1rem;
+}
+
+.detail-page-container {
+    margin-top: 6rem; /* Thêm không gian cho header */
+    padding: 2rem;
+    background-color: #f9f9f9; /* Làm nhẹ màu nền */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ */
+}
+
+/* Tiêu đề */
+.detail-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem; /* Thêm khoảng cách bên dưới tiêu đề */
+}
+
+/* Liên kết địa chỉ */
+.address-link {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    text-decoration: none; /* Loại bỏ gạch chân */
+    gap: 0.5rem;
+    color: #007bff; /* Màu xanh để tạo sự nhất quán */
+}
+
+.address-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #007bff; /* Đồng bộ màu của biểu tượng với văn bản */
+}
+
+/* Phần hiển thị ảnh đầy đủ */
+.photo-gallery {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9); /* Sử dụng màu nền nửa trong suốt */
+    color: white;
+    inset: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+/* Container chứa tất cả ảnh */
+.photo-gallery-content {
+    background-color: black;
+    padding: 2rem;
+    display: grid;
+    gap: 1rem; /* Tăng khoảng cách giữa các ảnh */
+}
+
+.photo-gallery-content img {
+    max-width: 100%; /* Giữ nguyên tỷ lệ ảnh */
+    border-radius: 10px; /* Làm tròn góc các ảnh */
+}
+
+/* Nút đóng gallery ảnh */
+.close-gallery-button {
+    position: absolute;
+    width: 10rem;
+    padding: 0.75rem;
+    right: 2rem;
+    top: 2rem;
+    border-radius: 1.5rem;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Tăng cường bóng đổ */
+}
+
+.close-gallery-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Lưới ảnh trên trang chi tiết */
+.image-gallery {
+    display: grid;
+    gap: 1.5rem; /* Tăng khoảng cách giữa các ảnh */
+    grid-template-columns: 2fr 1fr;
+    margin: 1.5rem 0;
+}
+
+.image-large {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-small {
+    height: 12.5rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Nút xem thêm ảnh */
+.show-more-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Tăng cường bóng đổ */
+}
+
+/* Đảm bảo kích thước của section-container bằng với kích thước của BookingWidget */
+.section-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem; /* Thêm khoảng cách bên dưới tiêu đề */
+}
+
+.section-container p {
+    margin-bottom: 1rem;
+    line-height: 1.6; /* Tăng khoảng cách dòng để dễ đọc hơn */
+}

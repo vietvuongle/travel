@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PhotosUploader from './PhotosUploader';
 import axios from 'axios';
-import NavbarLogin from '../../TrangChu/NabarLogin/NavbarLogin';
+import NavbarLogin from '../../../TrangChu/NabarLogin/NavbarLogin';
 import AccountNav from './AccountNav';
 import { Navigate, useParams } from 'react-router-dom';
 

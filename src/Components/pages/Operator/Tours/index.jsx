@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './Tours.module.scss';
+import styles from './Tours.module.css';
 import Sidebar from '../Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -19,19 +19,17 @@ function Tours() {
 
     return (
         <div className={cx('wrapper')}>
-            {isOpen && (
-                <div className={cx('menu')}>
-                    <Sidebar />
-                </div>
-            )}
+            { isOpen && (<div className={cx('menu')}>
+                <Sidebar/>
+            </div>)}
             <div className={cx('content')}>
                 <div className={cx('nav')}>
                     <div className={cx('nav-home')}>
                         <button onClick={toggleMenu} className={cx('header')}>
-                            <FontAwesomeIcon icon={faBars} />
+                            <FontAwesomeIcon icon={faBars}/>
                         </button>
-                        <p>Home</p>
-                        <p>Contact</p>
+                        <p className={cx('pading10px')}>Home</p>
+                        <p className={cx('pading10px')}>Contact</p>
                     </div>
                     <div className={cx('header-icon')}>
                         <button className={cx('search-btn')}>
@@ -40,6 +38,7 @@ function Tours() {
                         <button className={cx('search-btn')}>
                             <FontAwesomeIcon icon={faComment} />
                         </button>
+                        
                     </div>
                 </div>
 
@@ -56,7 +55,7 @@ function Tours() {
                                 <input type="text" className={cx('input-border')} />
                             </div>
                             <div className={cx('mb-4')}>
-                                <label className={cx('block')}>ID Khách Sạn</label>
+                                <label className={cx('block')}>Khu Vực</label>
                                 <select className={cx('input-border')}>
                                     <option></option>
                                 </select>
@@ -71,12 +70,8 @@ function Tours() {
                                     <option></option>
                                 </select>
                             </div>
-
-                            <div className={cx('mb-4')}>
-                                <label className={cx('block')}>Tỉnh Thành</label>
-                                <select className={cx('input-border')}>
-                                    <option></option>
-                                </select>
+                            <div className='btn-submit'>
+                                <button type='submit'>Thêm Mới</button>
                             </div>
                         </div>
 
@@ -91,7 +86,7 @@ function Tours() {
                                         <th>ID Khách Sạn</th>
                                         <th>Địa Điểm Tham Quan</th>
                                         <th>ID Phương Tiện</th>
-                                        <th>Tỉnh Thành</th>
+                                        <th>Khu Vực</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -112,14 +107,6 @@ function Tours() {
                                         <td>@mdo</td>
                                         <td>@mdo</td>
                                         <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td colSpan={2}>Larry the Bird</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>@twitter</td>
                                     </tr>
                                 </tbody>
                             </Table>
