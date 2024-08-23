@@ -8,6 +8,8 @@ import PlacesFormPage from '../Components/pages/AccountPage/PlacesFormPage';
 import DetailPage from '../Components/pages/AccountPage/DetailPage';
 import BookingsPage from '../Components/pages/AccountPage/BookingsPage';
 import BookingPlace from '../Components/pages/AccountPage/BookingPlace';
+import Destinate from '../Components/pages/Operator/Destinate/Destinate';
+import TourDetailUser from '../Components/pages/Operator/TourDetailUser/TourDetailUser';
 
 const publicRoutes = [
     { path: '/', component: TrangChu },
@@ -21,6 +23,8 @@ const publicRoutes = [
     { path: '/place/:id', component: DetailPage },
     { path: '/account/bookings', component: BookingsPage },
     { path: '/account/bookings/:id', component: BookingPlace },
+    { path: '/destinate', component: Destinate },
+    { path: '/tour-detail', component: TourDetailUser }
 ];
 
 export { publicRoutes };
